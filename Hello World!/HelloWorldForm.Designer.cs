@@ -128,12 +128,12 @@
             // 
             resources.ApplyResources(this._velocitySlider, "_velocitySlider");
             this._velocitySlider.LargeChange = 10;
-            this._velocitySlider.Maximum = 100;
-            this._velocitySlider.Minimum = 10;
+            this._velocitySlider.Maximum = 3;
+            this._velocitySlider.Minimum = 1;
             this._velocitySlider.Name = "_velocitySlider";
             this._velocitySlider.TickFrequency = 5;
             this._toolTip.SetToolTip(this._velocitySlider, resources.GetString("_velocitySlider.ToolTip"));
-            this._velocitySlider.Value = 100;
+            this._velocitySlider.Value = 1;
             // 
             // _moveNegativeButton
             // 

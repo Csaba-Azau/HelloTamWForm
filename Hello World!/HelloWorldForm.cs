@@ -30,7 +30,7 @@ namespace Triamec.Tam.Samples {
         /// </summary>
         // CAUTION!
         // Selecting the wrong axis can have unintended consequences.
-        const string AxisName = "X";
+        const string AxisName = "Axis 1";
 
         /// <summary>
         /// The distance to move when pressing one of the move buttons.
@@ -39,19 +39,19 @@ namespace Triamec.Tam.Samples {
         // The unit of this constant depends on the PositionUnit parameter provided with the TAM configuration.
         // Additionally, the encoder must be correctly configured.
         // Consider any limit stops.
-        const double Distance = 0.5 * Math.PI;
+        const double Distance = 3; //0.5 * Math.PI;
 
         /// <summary>
         /// Whether to use a (rather simplified) simulation of the axis.
         /// </summary>
         // CAUTION!
         // Ensure the above constants are properly configured before setting this to false.
-        readonly bool _offline = true;
+        readonly bool _offline = false;
 
         /// <summary>
         /// The configuration file to seed the simulation.
         /// </summary>
-        const string OfflineConfigurationPath = "HelloWorld.TAMcfg";
+        const string OfflineConfigurationPath = "UglyMotion.TAMcfg";
 
         TamTopology _topology;
         TamAxis _axis;
@@ -184,7 +184,7 @@ namespace Triamec.Tam.Samples {
             // Move a distance with dedicated velocity.
             // If the axis is just moving, it is reprogrammed with this command.
             // Please note that in offline mode, the velocity parameter is ignored.
-            _axis.MoveRelative(Math.Sign(sign) * Distance, _velocityMaximum * _velocitySlider.Value * 0.01f);
+            _axis.MoveRelative(Math.Sign(sign) * Distance, _velocityMaximum * _velocitySlider.Value * 0.001f); //* 0.01f);
 
         /// <summary>
         /// Measures the axis position and shows it in the GUI.
